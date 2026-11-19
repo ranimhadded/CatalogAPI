@@ -40,14 +40,14 @@ app.MapGet("/health", () => Results.Ok(new
 }));
 
 // Get all products
-app.MapGet("/api/products", async (AppDbContext db) =>
+app.MapGet("/api/get-all-products", async (AppDbContext db) =>
 {
     var products = await db.Products.ToListAsync();
     return Results.Ok(products);
 });
 
 // Add a product
-app.MapPost("/api/products", async (Product product, AppDbContext db) =>
+app.MapPost("/api/create-product", async (Product product, AppDbContext db) =>
 {
     db.Products.Add(product);
     await db.SaveChangesAsync();
