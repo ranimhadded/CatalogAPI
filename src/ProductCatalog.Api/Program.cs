@@ -72,7 +72,7 @@ app.MapGet("/api/get-product/{id:int}", async (int id, AppDbContext db) =>
     return Results.Ok(product);
 })
 .WithName("GetProductById");
-
+// Test de collaboration avec la branche collab-branch
 //delete a product
 app.MapDelete("/api/products/{id:int}", async (int id, AppDbContext db) =>
 {
